@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Rubric</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+      }
+      /* Navigation Styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .nav-links a:hover {
+        color: #3498db;
+      }
+      /* Existing Styles */
+      .container {
+        max-width: 1200px;
+        margin: 5rem auto 2rem;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+      }
+      th,
+      td {
+        border: 1px solid #dee2e6;
+        padding: 1rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #2c3e50;
+        color: white;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+      tr:hover {
+        background-color: #e9ecef;
+      }
+      .score {
+        font-weight: bold;
+        color: #2c3e50;
+        text-align: center;
+      }
+      .max-points {
+        font-weight: bold;
+        color: #2c3e50;
+        text-align: center;
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .nav-links {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+        .container {
+          margin-top: 8rem;
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="logo">Mr Krajic AP World Pd 8 - WWI Women's War Effort</div>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="rubric.html">Rubric</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>AP World History Project Rubric</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Excellent (18-20)</th>
+            <th>Good (14-17)</th>
+            <th>Satisfactory (10-13)</th>
+            <th>Needs Improvement (6-9)</th>
+            <th>Poor (1-5)</th>
+            <th>Max Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thesis Idea & Purpose</td>
+            <td>
+              Clear, focused, and demonstrates synthesis of historical
+              understanding. Purpose of the site is well-defined and engaging.
+            </td>
+            <td>
+              Clearly stated and demonstrates analysis. Purpose is present but
+              could be more engaging.
+            </td>
+            <td>
+              Somewhat clear but lacks focus or depth. Shows partial
+              understanding.
+            </td>
+            <td>Weak or underdeveloped. Shows minimal understanding.</td>
+            <td>Barely recognizable or incoherent.</td>
+            <td class="max-points">20</td>
+          </tr>
+          <tr>
+            <td>Supporting Evidence & Content</td>
+            <td>
+              Rich, varied, and thoroughly developed content that strongly
+              supports the thesis. Logical flow across sections/pages.
+            </td>
+            <td>
+              Good content supporting the thesis, with some variety and
+              generally logical organization.
+            </td>
+            <td>
+              Evidence is minimal or repetitive. Organization is somewhat
+              confusing.
+            </td>
+            <td>Little content or support. No clear logical flow.</td>
+            <td>Minimal or irrelevant content.</td>
+            <td class="max-points">20</td>
+          </tr>
+          <tr>
+            <td>Historical Accuracy & Sources</td>
+            <td>
+              All information is accurate, drawn from credible sources. Multiple
+              sources cited clearly. No factual errors.
+            </td>
+            <td>
+              Mostly accurate with decent sources. Few minor errors. Sources
+              cited.
+            </td>
+            <td>
+              Mostly accurate with occasional errors. Limited or unclear
+              sources.
+            </td>
+            <td>
+              Some factual errors or reliance on poor sources. Few or no
+              citations.
+            </td>
+            <td>Unreliable or incorrect information. No credible sources.</td>
+            <td class="max-points">20</td>
+          </tr>
+          <tr>
+            <td>Analysis of Historical Evidence and Argument</td>
+            <td>
+              Sophisticated argument that directly addresses the prompt using
+              well-selected evidence. Clear analysis of how evidence supports
+              the argument. Demonstrates deep understanding of historical
+              context and significance.
+            </td>
+            <td>
+              Strong argument that addresses the prompt with relevant evidence.
+              Good analysis of evidence in support of the argument. Shows
+              understanding of historical context. Some consideration of
+              different perspectives.
+            </td>
+            <td>
+              Basic argument that partially addresses the prompt. Some evidence
+              used to support points, but analysis is limited. Shows basic
+              understanding of historical context. Limited consideration of
+              different perspectives.
+            </td>
+            <td>
+              Weak argument that barely addresses the prompt. Minimal use of
+              evidence to support points. Limited understanding of historical
+              context. No consideration of different perspectives.
+            </td>
+            <td>
+              No clear argument in response to the prompt. Evidence presented
+              without meaningful analysis or connection to an argument. Little
+              to no understanding of historical context demonstrated.
+            </td>
+            <td class="max-points">30</td>
+          </tr>
+          <tr>
+            <td>Clarity, Organization & Visual Design</td>
+            <td>
+              Website is intuitive and well-structured with aesthetically
+              pleasing design. Consistent layout, legible fonts, appropriate
+              color schemes, and functional links/media. No technical issues or
+              errors.
+            </td>
+            <td>
+              Clear layout with minor design inconsistencies. Some small issues
+              with flow or navigation. One or two minor technical issues (e.g.,
+              slightly inconsistent styles, broken links).
+            </td>
+            <td>
+              Somewhat confusing structure or hard-to-find content. Basic visual
+              appeal with some inconsistencies or technical issues (e.g.,
+              non-responsive design, broken images).
+            </td>
+            <td>
+              Disorganized and hard to follow. Sloppy appearance with many
+              technical issues, poor formatting, or unreadable sections.
+            </td>
+            <td>
+              Confusing or broken navigation. Unfinished or extremely difficult
+              to use/view with many broken features.
+            </td>
+            <td class="max-points">10</td>
+          </tr>
+          <tr>
+            <td>Total Score</td>
+            <td colspan="5" style="text-align: right">
+              <strong>Total:</strong>
+            </td>
+            <td class="score">___/100</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
