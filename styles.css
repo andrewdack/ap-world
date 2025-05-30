@@ -15,12 +15,13 @@ body {
 
 /* Navigation */
 .navbar {
-    position: fixed;
-    top: 0;
+    /* position: fixed; */
+    /* top: 0; */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: none; /* Hide the navbar */
 }
 
 .nav-content {
@@ -244,21 +245,83 @@ h2 {
 
 /* Propaganda Section */
 #propaganda {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-}
-
-#propaganda .propaganda-gallery {
+    position: relative;
+    height: 100vh; /* Make section take full viewport height */
+    overflow-y: hidden; /* Hide vertical scroll for this section */
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0; /* Adjust padding */
 }
 
-#propaganda .propaganda-item:first-child {
+#propaganda .container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; Keep content centered vertically if needed, but gallery needs space */
+}
+
+#propaganda h2 {
     margin-bottom: 2rem;
+    z-index: 2;
+    position: relative;
+}
+
+.propaganda-navigation {
+    width: 100%;
+    max-width: 800px; /* Match max-width of cards for alignment */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between arrows and gallery */
+    position: relative; /* For potential positioning */
+    z-index: 2; /* Ensure arrows are above gallery */
+}
+
+.nav-arrow {
+    font-size: 2rem;
+    color: #2c3e50;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+    color: #3498db; /* Hover color */
+}
+
+.nav-arrow.disabled {
+    color: #ccc; /* Dim disabled arrows */
+    cursor: not-allowed;
+}
+
+.propaganda-gallery {
+    flex-grow: 1;
+    width: 100%;
+    display: flex; /* Arrange items horizontally */
+    align-items: center;
+    overflow-x: auto; /* Enable horizontal scroll */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    scroll-snap-type: x mandatory; /* Snap to card boundaries */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    padding: 0 2rem;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.propaganda-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for aesthetics */
 }
 
 .propaganda-item {
+    flex: 0 0 calc(80% - 2rem); /* Cards take 80% minus margin */
+    max-width: 800px; /* Maintain max width */
+    height: 90%; /* Normalize height */
+    margin-right: 2rem; /* Add space between cards */
     background: white;
     padding: 2rem;
     border-radius: 8px;
@@ -266,20 +329,47 @@ h2 {
     display: flex;
     gap: 2rem;
     align-items: center;
+    scroll-snap-align: center; /* Snap point is the center of the card */
+    transition: opacity 0.5s ease;
+    opacity: 0.4; /* Slightly dim non-active cards */
 }
 
-.propaganda-item .image-placeholder {
-    flex: 0 0 300px;
-    margin-bottom: 0;
-    height: 400px;
+/* Remove margin from the last item to avoid extra space at the end */
+.propaganda-item:last-child {
+    margin-right: 0;
 }
 
-.propaganda-item .image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.propaganda-item.active-snap {
+    opacity: 1; /* Full opacity for the snapped card */
 }
 
+.propaganda-item.red-cross-card {
+    flex: 0 0 calc(95% - 2rem); /* Increase width further for this card using 95% */
+}
+
+.propaganda-item.red-cross-card p {
+    font-size: 1rem; /* Reduce font size for the paragraph in this card */
+}
+
+.propaganda-item.gee-man-card p {
+    font-size: 1rem; /* Reduce font size for the paragraph in this card */
+}
+
+@media (max-width: 768px) {
+    .propaganda-item {
+        flex-direction: column;
+        text-align: center;
+        flex: 0 0 calc(90% - 2rem); /* Wider on small screens, adjust for margin */
+    }
+
+    .propaganda-item .image-placeholder {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* Restore original styling for propaganda content within cards */
 .propaganda-content {
     flex: 1;
     display: flex;
@@ -304,18 +394,6 @@ h2 {
     line-height: 1.6;
     color: #333;
     margin: 0;
-}
-
-@media (max-width: 768px) {
-    .propaganda-item {
-        flex-direction: column;
-    }
-    
-    .propaganda-item .image-placeholder {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 300px;
-    }
 }
 
 /* Impact Section */
@@ -549,5 +627,35 @@ footer {
 }
 
 #research-overview .scroll-indicator .arrow:hover {
+    transform: translateY(5px);
+}
+
+#propaganda .scroll-indicator {
+    position: absolute;
+    bottom: 0.5rem; /* Position from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    text-align: center;
+    color: #2c3e50; /* Dark color */
+    animation: bounce 2s infinite;
+    z-index: 2; /* Ensure it's above other content if needed */
+}
+
+#propaganda .scroll-indicator span {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
+}
+
+#propaganda .scroll-indicator .arrow {
+    font-size: 1.8rem;
+    color: #2c3e50; /* Dark color for arrow */
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+#propaganda .scroll-indicator .arrow:hover {
     transform: translateY(5px);
 } 
