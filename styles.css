@@ -255,7 +255,7 @@ h2 {
 }
 
 #propaganda .propaganda-item:first-child {
-    margin-bottom: 100vh;
+    margin-bottom: 2rem;
 }
 
 .propaganda-item {
@@ -330,6 +330,17 @@ h2 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.long-term-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.long-term-list li {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
 }
 
 /* Team Section */
@@ -489,4 +500,33 @@ footer {
     #research-overview .research-grid {
         grid-template-columns: 1fr;
     }
+}
+
+#research-overview .scroll-indicator {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #2c3e50;
+    animation: bounce 2s infinite;
+}
+
+#research-overview .scroll-indicator span {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
+}
+
+#research-overview .scroll-indicator .arrow {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+#research-overview .scroll-indicator .arrow:hover {
+    transform: translateY(5px);
 } 
